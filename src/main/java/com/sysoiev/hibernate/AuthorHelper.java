@@ -49,6 +49,36 @@ public class AuthorHelper {
 
     }
 
+    // добавляют нового автора в таблица Author
+    public Author addAuthor(Author author) {
+
+
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        for (int i = 1; i <= 200; i++) {
+            Author a = new Author("name" + i);
+            if (i % 10 == 0) {
+                session.flush();
+            }
+            session.save(a); // сгенерит ID и вставит в объект
+        }
+
+        session.getTransaction().commit();
+
+        session.close();
+
+        sessionFactory.close(); // чтобы завершить Java процесс, иначе проргамма не закроется
+
+//        Author a1 = session.get(Author.class, 1L);
+//        a1.setName("Лермонтов99");
+//        a1.setSecondName("12314");
+
+
+        return author;
+
+    }
+
     public Author getAuthor(String name) {
         return null;
     }

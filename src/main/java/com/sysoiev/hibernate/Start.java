@@ -9,6 +9,9 @@ public class Start {
 
     public static void main(String[] args) {
         Session session = HibernateUtil.getSessionFactory().openSession();
+        Author author1 = new Author("testing");
+        new AuthorHelper().addAuthor(author1);
+
         for (Author author : new AuthorHelper().getAuthorList()
         ) {
             System.out.println("author = " + author.getName());

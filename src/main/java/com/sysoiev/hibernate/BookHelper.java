@@ -23,7 +23,7 @@ public class BookHelper {
         // открыть сессию - для манипуляции с персист. объектами
         Session session = sessionFactory.openSession();
 
-        session.get(Book.class, 1L); // получение объекта по id
+       // session.get(Book.class, 1L); // получение объекта по id
 
 
         // этап подготовки запроса
