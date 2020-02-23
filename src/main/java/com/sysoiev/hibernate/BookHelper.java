@@ -1,6 +1,5 @@
 package com.sysoiev.hibernate;
 
-import com.sysoiev.hibernate.entity.Author;
 import com.sysoiev.hibernate.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

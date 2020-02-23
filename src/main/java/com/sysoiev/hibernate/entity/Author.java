@@ -18,6 +18,8 @@ import java.io.Serializable;
 @RequiredArgsConstructor
 @DynamicUpdate
 @DynamicInsert
+@EqualsAndHashCode(of="id")
+@ToString(of="name", includeFieldNames = false)
 public class Author implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//генерация ID через Autoincrement в MySQL
